@@ -1,0 +1,52 @@
+package u3e5;
+public class MetodosCola {
+    private Nodo raiz,fina;
+    Nodo nuevo;
+    public void colas(){
+        raiz=null;
+        fina=null;
+    }
+    boolean vaciar (){
+        if(raiz == null){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    void inserta(int x){
+        nuevo = new Nodo ();
+        nuevo.elem = x;
+        nuevo.sig = null;
+        if (vaciar ()) {
+            raiz = nuevo;
+            fina = nuevo;
+        } else {
+            fina.sig = nuevo;
+            fina = nuevo;
+        }
+    }
+    public int extrae(){
+        if (!vaciar()){
+            int informacion = raiz.elem;
+            if (raiz == fina){
+                raiz = null;
+                fina = null;
+            } else {
+                raiz = raiz.sig;
+            }
+            return informacion;
+        } else
+            return Integer.MAX_VALUE;
+    }
+    
+    public void imprimir(){
+        Nodo recorrer=raiz;
+        System.out.println("Elementos de cola: ");
+        while (recorrer!=null) {
+            System.out.print(recorrer.elem + ",");
+            recorrer=recorrer.sig;
+        }
+        System.out.println();
+    }
+}
