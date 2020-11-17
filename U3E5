@@ -1,0 +1,43 @@
+package u3e5;
+import java.util.Scanner;
+
+public class U3E5 {
+    public static void main(String[] args) {
+        Scanner entrada=new Scanner(System.in);
+        MetodosCola objMetodosCola = new MetodosCola();
+        int opc,c = 0;
+        int num;
+        do{
+            System.out.println(" *Cola Dinamica Nodos GamerPink* ");
+            System.out.println("-----------------------------");
+            System.out.println("Selecciones su Opcion: ");
+            System.out.println("1 Insertar Dato");
+            System.out.println("2 Mostrar Dato");
+            System.out.println("3 Eliminar Dato");
+            System.out.println("4 Salir");
+            System.out.println("-----------------------------");
+            opc = entrada.nextInt();
+            System.out.println("-----------------------------");
+            switch(opc){
+                case 1:
+                    System.out.println("Numero a insertar: ");
+                    num=entrada.nextInt();
+                    objMetodosCola.inserta(num);
+                    System.out.println("**************************");
+                    break;
+                case 2:
+                    System.out.println("**************************");
+                    objMetodosCola.imprimir();
+                    System.out.println("**************************");
+                    break;
+                case 3:
+                    objMetodosCola.extrae();
+                    System.out.println("**************************");
+                    break;
+                case 4:
+                    System.exit(0);
+                    break;
+            }
+        }while(c==0);
+    }
+}
